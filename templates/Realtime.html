@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Mask Detection</title>
+    <!-- Load css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Realtime.css') }}">
+</head>
+    
+<body>
+    <h1>Realtime Mask Detection</h1>
+    <img id="videoFeed" src="/video_feed" alt="Realtime Video Feed">
+    <button onclick="goBack()">Quay lại</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }   
+    </script>
+</body>
+</html>

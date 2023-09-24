@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Image for Mask Detection</title>
+
+    <!-- Load css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='load_image.css') }}">
+</head>
+<body>
+    <h1>Load Image for Mask Detection</h1>
+    <form action="/load_image" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required multiple>
+        <input type="submit" value="Upload and Detect">
+    </form>
+
+    <!-- Display the results -->
+    {% if results %}
+    <h2>Results:</h2>
+    <div class="results-container">
+        {% for result in results %}
+            <img src="{{ result }}" alt="Processed Image">
+        {% endfor %}
+    </div>
+    {% endif %}
+    <button onclick="goBack()">Quay lại</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    
+</body>
+</html>
